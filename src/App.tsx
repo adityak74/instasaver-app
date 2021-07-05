@@ -14,7 +14,7 @@ export default function App() {
             <Appbar.Action icon="dots-vertical" onPress={_handleMore} />
         </Appbar.Header>
         <View>
-            <Text>Open up App.tsx to start working on your app! Yeah man its so good</Text>
+            <Text>Open up App.tsx to start working on your app! Yeah man its so good. Yes it might be working. </Text>
             <StatusBar style="auto" />
         </View>
       </SafeAreaView>
