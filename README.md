@@ -38,8 +38,6 @@ Any advise for common problems or issues.
 
 ## Authors
 
-Contributors names and contact info
-
 Aditya Karnam
 [@aditya_karnam](https://twitter.com/aditya_karnam)
 
