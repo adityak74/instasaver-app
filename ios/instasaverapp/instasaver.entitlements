@@ -4,5 +4,10 @@
   <dict>
     <key>aps-environment</key>
     <string>development</string>
+    <!--TODO:  Add this tag, if you want support opening urls into your app-->
+    <key>com.apple.developer.associated-domains</key>
+    <array>
+        <string>applinks:instagram.com</string>
+    </array>
   </dict>
 </plist>
