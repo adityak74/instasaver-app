@@ -1,25 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Appbar } from 'react-native-paper';
-import { StyleSheet, Text, View, SafeAreaView, Platform, StatusBar as ReactStatusBar } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import ReceiveSharingIntent from 'react-native-receive-sharing-intent';
-import { ios } from '../app.json';
+import appJSON from '../app.json';
 
 export default function App() {
   const _handleSearch = () => console.log('Searching');
   const _handleMore = () => console.log('Shown more');
-  // To get All Recived Urls
-  ReceiveSharingIntent.getReceivedFiles(files => {
-    // files returns as JSON Array example
-    //[{ filePath: null, text: null, weblink: null, mimeType: null, contentUri: null, fileName: null, extension: null }]
-  }, 
-  (error) => {
-    console.log(error);
-  }, 
-  ios.bundleIdentifier // share url protocol (must be unique to your app, suggest using your apple bundle id)
-  );
-  // To clear Intents
-  ReceiveSharingIntent.clearReceivedFiles();
+  React.useEffect(() => {
+    ReceiveSharingIntent.getReceivedFiles((data:any)=> {
+      console.log(data);
+    },
+    (err:any)=>{
+      console.log(err);
+    },
+    appJSON.expo.ios.bundleIdentifier
+    );
+
+    return () => {
+      ReceiveSharingIntent.clearReceivedFiles();
+    }
+  }, []);
   return (
       <SafeAreaView>
         <Appbar.Header>

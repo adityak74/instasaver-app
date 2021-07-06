@@ -12,10 +12,38 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
+		488DAB652693EF5500652B96 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488DAB642693EF5500652B96 /* ShareViewController.swift */; };
+		488DAB682693EF5500652B96 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488DAB662693EF5500652B96 /* MainInterface.storyboard */; };
+		488DAB6C2693EF5500652B96 /* Share to Instasaver.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 488DAB622693EF5500652B96 /* Share to Instasaver.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		488DAB712694122C00652B96 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488DAB642693EF5500652B96 /* ShareViewController.swift */; };
 		96905EF65AED1B983A6B3ABC /* libPods-instasaverapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-instasaverapp.a */; };
 		A1B2E0C7DCEF42F8AFA58AD3 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58680BCB87D94F849E1D04FC /* noop-file.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		488DAB6A2693EF5500652B96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 488DAB612693EF5500652B96;
+			remoteInfo = "Share to Instasaver";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		488DAB6D2693EF5500652B96 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				488DAB6C2693EF5500652B96 /* Share to Instasaver.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -26,6 +54,10 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = instasaverapp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = instasaverapp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = instasaverapp/main.m; sourceTree = "<group>"; };
+		488DAB622693EF5500652B96 /* Share to Instasaver.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Share to Instasaver.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		488DAB642693EF5500652B96 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		488DAB672693EF5500652B96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		488DAB692693EF5500652B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58680BCB87D94F849E1D04FC /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "instasaverapp/noop-file.swift"; sourceTree = "<group>"; };
 		58EEBF8E8E6FB1BC6CAF49B5 /* libPods-instasaverapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instasaverapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2E3173556A471DD304B334 /* Pods-instasaverapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instasaverapp.debug.xcconfig"; path = "Target Support Files/Pods-instasaverapp/Pods-instasaverapp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -43,6 +75,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				96905EF65AED1B983A6B3ABC /* libPods-instasaverapp.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488DAB5F2693EF5500652B96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +116,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		488DAB632693EF5500652B96 /* Share to Instasaver */ = {
+			isa = PBXGroup;
+			children = (
+				488DAB642693EF5500652B96 /* ShareViewController.swift */,
+				488DAB662693EF5500652B96 /* MainInterface.storyboard */,
+				488DAB692693EF5500652B96 /* Info.plist */,
+			);
+			path = "Share to Instasaver";
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +138,7 @@
 			children = (
 				13B07FAE1A68108700A75B9A /* instasaverapp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				488DAB632693EF5500652B96 /* Share to Instasaver */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D65327D7A22EEC0BE12398D9 /* Pods */,
@@ -102,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* instasaver.app */,
+				488DAB622693EF5500652B96 /* Share to Instasaver.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,15 +189,34 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
+				488DAB6D2693EF5500652B96 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				488DAB6B2693EF5500652B96 /* PBXTargetDependency */,
 			);
 			name = instasaverapp;
 			productName = instasaverapp;
 			productReference = 13B07F961A680F5B00A75B9A /* instasaver.app */;
 			productType = "com.apple.product-type.application";
+		};
+		488DAB612693EF5500652B96 /* Share to Instasaver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488DAB702693EF5500652B96 /* Build configuration list for PBXNativeTarget "Share to Instasaver" */;
+			buildPhases = (
+				488DAB5E2693EF5500652B96 /* Sources */,
+				488DAB5F2693EF5500652B96 /* Frameworks */,
+				488DAB602693EF5500652B96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Share to Instasaver";
+			productName = "Share to Instasaver";
+			productReference = 488DAB622693EF5500652B96 /* Share to Instasaver.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -154,10 +224,18 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = YEM79BJ364;
 						LastSwiftMigration = 1120;
+						ProvisioningStyle = Automatic;
+					};
+					488DAB612693EF5500652B96 = {
+						CreatedOnToolsVersion = 12.5.1;
+						DevelopmentTeam = YEM79BJ364;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -175,6 +253,7 @@
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* instasaverapp */,
+				488DAB612693EF5500652B96 /* Share to Instasaver */,
 			);
 		};
 /* End PBXProject section */
@@ -188,6 +267,14 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488DAB602693EF5500652B96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488DAB682693EF5500652B96 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,11 +395,28 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				488DAB712694122C00652B96 /* ShareViewController.swift in Sources */,
 				A1B2E0C7DCEF42F8AFA58AD3 /* noop-file.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		488DAB5E2693EF5500652B96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488DAB652693EF5500652B96 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		488DAB6B2693EF5500652B96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 488DAB612693EF5500652B96 /* Share to Instasaver */;
+			targetProxy = 488DAB6A2693EF5500652B96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
@@ -324,6 +428,14 @@
 			path = instasaverapp;
 			sourceTree = "<group>";
 		};
+		488DAB662693EF5500652B96 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				488DAB672693EF5500652B96 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -331,10 +443,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6C2E3173556A471DD304B334 /* Pods-instasaverapp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = instasaverapp/instasaver.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YEM79BJ364;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -350,6 +466,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.adityakarnam.instasaver;
 				PRODUCT_NAME = instasaver;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "instasaverapp/instasaverapp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -362,10 +479,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A4D352CD337FB3A3BF06240 /* Pods-instasaverapp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = instasaverapp/instasaver.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YEM79BJ364;
 				INFOPLIST_FILE = instasaverapp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -376,10 +497,68 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.adityakarnam.instasaver;
 				PRODUCT_NAME = instasaver;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "instasaverapp/instasaverapp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		488DAB6E2693EF5500652B96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = YEM79BJ364;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Share to Instasaver/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adityakarnam.instasaver.Share-to-Instasaver";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		488DAB6F2693EF5500652B96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = YEM79BJ364;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Share to Instasaver/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adityakarnam.instasaver.Share-to-Instasaver";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -498,6 +677,15 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		488DAB702693EF5500652B96 /* Build configuration list for PBXNativeTarget "Share to Instasaver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488DAB6E2693EF5500652B96 /* Debug */,
+				488DAB6F2693EF5500652B96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
