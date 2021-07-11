@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler';
 import { registerRootComponent } from 'expo';
+require('node-libs-react-native/globals');
 
 import App from './MainApp';
 
