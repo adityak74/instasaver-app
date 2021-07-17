@@ -1,17 +1,16 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { Appbar } from 'react-native-paper';
 import {
   ActivityIndicator,
-  Alert,
   Button,
+  Dimensions,
   SafeAreaView,
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
-import { save, saveToCameraRoll } from '@react-native-community/cameraroll';
+import { save } from '@react-native-community/cameraroll';
 import ReceiveSharingIntent from 'react-native-receive-sharing-intent';
+import CardView from 'react-native-cardview'
 import Snackbar from 'react-native-snackbar';
 import appJSON from '../app.json';
 import FastImage from 'react-native-fast-image';
@@ -19,7 +18,6 @@ import FastImage from 'react-native-fast-image';
 export default function App() {
   const [imageSource, setImageSource] = React.useState(null);
   const [submitting, setSubmitting] = React.useState(false);
-  let instagramImageRef = React.useRef(null);
 
   const _saveImageToCameraRoll = async () => {
     await save(imageSource);
@@ -59,32 +57,70 @@ export default function App() {
     }
   }, []);
   return (
-      <SafeAreaView>
+      <SafeAreaView style={styles.safeAreaView}>
         <Appbar.Header>
             <Appbar.Content title="Instasaver" />
         </Appbar.Header>
-        {submitting && <ActivityIndicator size="large" />}
-        {imageSource && 
-          <View>
-            <FastImage
-              ref={(c: any) => instagramImageRef = c}
-              style={{ width: 200, height: 200 }}
-              source={{
-                  uri: imageSource,
-                  priority: FastImage.priority.normal,
-              }}
-              resizeMode={FastImage.resizeMode.contain}
-            />
-            <Button
-              title="Save to Camera Roll"
-              onPress={_saveImageToCameraRoll}
-            />
+        {submitting &&
+          <View style={styles.centerSpinner}>
+            <ActivityIndicator size="large" />
           </View>
+        }
+        {imageSource && 
+          <CardView
+            cardElevation={6}
+            cardMaxElevation={2}
+            cornerRadius={5}
+            >
+              <View style={styles.container}>
+                <FastImage
+                  style={styles.fastImageView}
+                  source={{
+                    priority: FastImage.priority.normal,
+                    uri: imageSource,
+                  }}
+                  resizeMode={FastImage.resizeMode.contain}
+                />
+                <View style={styles.buttonView}>
+                  <Button
+                    title="Save to Camera Roll"
+                    color="#ffffff"
+                    onPress={_saveImageToCameraRoll}
+                  />
+                </View>
+              </View>
+          </CardView>
         }
       </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-    
+  safeAreaView: {
+    flex: 1
+  },
+  centerSpinner: {
+    flex: 1,
+    justifyContent: 'center'
+  },
+  container: {
+    marginTop: 20,
+    marginLeft: 40,
+    marginRight: 40,
+    padding: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF'
+  },
+  buttonView: {
+    backgroundColor: '#2196F3',
+    marginTop: 20,
+    borderRadius: 10,
+    shadowRadius: 10,
+    shadowColor: '#cccccc'
+  },
+  fastImageView: {
+    height: (Dimensions.get('window').height / 3),
+    width: Dimensions.get('window').width,
+  },
 });
