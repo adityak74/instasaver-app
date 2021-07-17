@@ -14,6 +14,11 @@ import CardView from 'react-native-cardview'
 import Snackbar from 'react-native-snackbar';
 import appJSON from '../app.json';
 import FastImage from 'react-native-fast-image';
+import * as Sentry from "@sentry/react-native";
+
+Sentry.init({
+  dsn: "https://4e12512b3920456280975bae77b94592@o563780.ingest.sentry.io/5704093"
+});
 
 export default function App() {
   const [imageSource, setImageSource] = React.useState(null);
