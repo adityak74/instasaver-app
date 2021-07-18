@@ -1,6 +1,8 @@
 {
   "scripts": {
     "start": "react-native start",
+    "bundle:ios": "react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios",
+    "bundle:ios:dev": "react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "web": "expo start --web",

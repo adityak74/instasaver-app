@@ -10,14 +10,15 @@ import {
 } from 'react-native';
 import { save } from '@react-native-community/cameraroll';
 import ReceiveSharingIntent from 'react-native-receive-sharing-intent';
-import CardView from 'react-native-cardview'
+import CardView from 'react-native-cardview';
 import Snackbar from 'react-native-snackbar';
 import appJSON from '../app.json';
 import FastImage from 'react-native-fast-image';
 import * as Sentry from "@sentry/react-native";
 
 Sentry.init({
-  dsn: "https://4e12512b3920456280975bae77b94592@o563780.ingest.sentry.io/5704093"
+  dsn: "https://4e12512b3920456280975bae77b94592@o563780.ingest.sentry.io/5704093",
+  enableNative: false
 });
 
 export default function App() {
@@ -62,41 +63,41 @@ export default function App() {
     }
   }, []);
   return (
-      <SafeAreaView style={styles.safeAreaView}>
-        <Appbar.Header>
-            <Appbar.Content title="Instasaver" />
-        </Appbar.Header>
-        {submitting &&
-          <View style={styles.centerSpinner}>
-            <ActivityIndicator size="large" />
-          </View>
-        }
-        {imageSource && 
-          <CardView
-            cardElevation={6}
-            cardMaxElevation={2}
-            cornerRadius={5}
-            >
-              <View style={styles.container}>
-                <FastImage
-                  style={styles.fastImageView}
-                  source={{
-                    priority: FastImage.priority.normal,
-                    uri: imageSource,
-                  }}
-                  resizeMode={FastImage.resizeMode.contain}
+    <SafeAreaView style={styles.safeAreaView}>
+      <Appbar.Header>
+          <Appbar.Content title="Instasaver" />
+      </Appbar.Header>
+      {submitting &&
+        <View style={styles.centerSpinner}>
+          <ActivityIndicator size="large" />
+        </View>
+      }
+      {imageSource && 
+        <CardView
+          cardElevation={6}
+          cardMaxElevation={2}
+          cornerRadius={5}
+          >
+            <View style={styles.container}>
+              <FastImage
+                style={styles.fastImageView}
+                source={{
+                  priority: FastImage.priority.normal,
+                  uri: imageSource,
+                }}
+                resizeMode={FastImage.resizeMode.contain}
+              />
+              <View style={styles.buttonView}>
+                <Button
+                  title="Save to Camera Roll"
+                  color="#ffffff"
+                  onPress={_saveImageToCameraRoll}
                 />
-                <View style={styles.buttonView}>
-                  <Button
-                    title="Save to Camera Roll"
-                    color="#ffffff"
-                    onPress={_saveImageToCameraRoll}
-                  />
-                </View>
               </View>
-          </CardView>
-        }
-      </SafeAreaView>
+            </View>
+        </CardView>
+      }
+    </SafeAreaView>
   );
 }
 
