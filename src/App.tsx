@@ -21,6 +21,8 @@ Sentry.init({
   enableNative: false
 });
 
+Sentry.setTag("app", "instasaver");
+
 export default function App() {
   const [imageSource, setImageSource] = React.useState(null);
   const [submitting, setSubmitting] = React.useState(false);
