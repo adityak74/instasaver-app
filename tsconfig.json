@@ -3,6 +3,8 @@
   "compilerOptions": {
     "jsx": "react",
     "strict": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true
   }
 }

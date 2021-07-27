@@ -1,9 +1,8 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import {
   SafeAreaView,
   View,
 } from 'react-native';
-import ReceiveSharingIntent from 'react-native-receive-sharing-intent';
 import {
   branch,
   compose,
@@ -36,14 +35,13 @@ type receiveShareSuccessProps = {
 };
 
 type AppProps = {
-  children?: ReactNode,
   receiveShareSuccess: (data: any) => void,
   receiveShareError: (error: any) => void,
 };
 
 type PropsWithChildren = AppProps & { children?: ReactNode };
 
-const AppComponent: FunctionComponent<PropsWithChildren> = ({
+const AppComponent: React.FC<PropsWithChildren> = ({
   receiveShareSuccess,
   receiveShareError,
 }) => {
