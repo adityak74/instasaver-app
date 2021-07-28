@@ -10,7 +10,6 @@ import {
   renderComponent,
 } from 'recompose';
 
-import appJSON from '../app.json';
 import styles from './styles';
 import sentrySetup from './sentry';
 import Header from './components/Header';
@@ -20,6 +19,7 @@ import saveImageToCameraRoll from './helpers/saveImageToCameraRoll';
 import Buttom from './components/Button';
 import Image from './components/Image';
 import receiveSharingIntent from './helpers/receiveSharingIntent';
+import requestHelper from './helpers/request';
 
 sentrySetup(true);
 
@@ -86,16 +86,12 @@ const enhance = compose(
       const { weblink } = data[0];
       setSubmitting(true);
       setImageSource(null);
-      const response = await fetch('https://instasaver-api.herokuapp.com/get-instagram-post-data', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
+      const response = await requestHelper(
+        'POST',
+        'https://instasaver-api.herokuapp.com/get-instagram-post-data', 
+        JSON.stringify({
           instagramUrl: weblink,
-        }),
-      });
+        }));
       const responseJSON = await response.json();
       setImageSource(responseJSON.data.url);
       setSubmitting(false);
