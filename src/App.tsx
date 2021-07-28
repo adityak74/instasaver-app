@@ -20,25 +20,13 @@ import Buttom from './components/Button';
 import Image from './components/Image';
 import receiveSharingIntent from './helpers/receiveSharingIntent';
 import requestHelper from './helpers/request';
+import {
+  handlerProps,
+  AppProps,PropsWithChildren,
+  receiveShareSuccessProps,
+} from './types';
 
 sentrySetup(true);
-
-interface handlerProps {
-  receiveShareSuccess: Function,
-  receiveShareError: Function,
-};
-
-type receiveShareSuccessProps = {
-  setSubmitting: (submitting: boolean) => void,
-  setImageSource: (imageSource: string | null) => void,
-};
-
-type AppProps = {
-  receiveShareSuccess: (data: any) => void,
-  receiveShareError: (error: any) => void,
-};
-
-type PropsWithChildren = AppProps & { children?: ReactNode };
 
 const AppComponent: React.FC<PropsWithChildren> = ({
   receiveShareSuccess,
@@ -48,7 +36,8 @@ const AppComponent: React.FC<PropsWithChildren> = ({
   const [submitting, setSubmitting] = React.useState(false);
 
   React.useEffect(() => {
-    receiveSharingIntent(receiveShareSuccess, receiveShareError);
+    console.log('herererere')
+    return receiveSharingIntent(receiveShareSuccess, receiveShareError);
   }, []);
   return (
     <SafeAreaView style={styles.safeAreaView}>
@@ -83,6 +72,7 @@ const enhance = compose(
       setSubmitting,
       setImageSource,
     }: receiveShareSuccessProps) => async (data: any) => {
+      console.log('data', data)
       const { weblink } = data[0];
       setSubmitting(true);
       setImageSource(null);
