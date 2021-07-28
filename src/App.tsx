@@ -21,7 +21,6 @@ import Buttom from './components/Button';
 import Image from './components/Image';
 import receiveSharingIntent from './helpers/receiveSharingIntent';
 
-
 sentrySetup(true);
 
 interface handlerProps {
@@ -44,7 +43,7 @@ type PropsWithChildren = AppProps & { children?: ReactNode };
 const AppComponent: React.FC<PropsWithChildren> = ({
   receiveShareSuccess,
   receiveShareError,
-}) => {
+}: AppProps) => {
   const [imageSource, setImageSource] = React.useState(null);
   const [submitting, setSubmitting] = React.useState(false);
 
