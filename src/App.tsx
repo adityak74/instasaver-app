@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   View,
@@ -9,6 +9,7 @@ import {
   withHandlers,
   renderComponent,
 } from 'recompose';
+import Snackbar from 'react-native-snackbar';
 
 import styles from './styles';
 import sentrySetup from './sentry';
@@ -36,7 +37,6 @@ const AppComponent: React.FC<PropsWithChildren> = ({
   const [submitting, setSubmitting] = React.useState(false);
 
   React.useEffect(() => {
-    console.log('herererere')
     return receiveSharingIntent(receiveShareSuccess, receiveShareError);
   }, []);
   return (
@@ -72,7 +72,6 @@ const enhance = compose(
       setSubmitting,
       setImageSource,
     }: receiveShareSuccessProps) => async (data: any) => {
-      console.log('data', data)
       const { weblink } = data[0];
       setSubmitting(true);
       setImageSource(null);
@@ -86,7 +85,10 @@ const enhance = compose(
       setImageSource(responseJSON.data.url);
       setSubmitting(false);
     },
-    receiveShareError: () => (error: any) => console.log(error),
+    receiveShareError: () => (error: any) => Snackbar.show({
+      text: 'Error parsing instagram URL',
+      duration: Snackbar.LENGTH_SHORT,
+    }),
   }),
 );
 
