@@ -17,7 +17,12 @@ type AppProps = {
 
 type PropsWithChildren = AppProps & { children?: ReactNode };
 
+type EnhanceProps = {
+  submitting: boolean,
+};
+
 export type {
+  EnhanceProps,
   handlerProps,
   receiveShareSuccessProps,
   AppProps,

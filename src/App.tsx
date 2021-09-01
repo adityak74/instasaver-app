@@ -4,10 +4,8 @@ import {
   View,
 } from 'react-native';
 import {
-  branch,
   compose,
   withHandlers,
-  renderComponent,
 } from 'recompose';
 import Snackbar from 'react-native-snackbar';
 
@@ -23,7 +21,8 @@ import receiveSharingIntent from './helpers/receiveSharingIntent';
 import requestHelper from './helpers/request';
 import {
   handlerProps,
-  AppProps,PropsWithChildren,
+  AppProps,
+  PropsWithChildren,
   receiveShareSuccessProps,
 } from './types';
 
@@ -61,12 +60,7 @@ const AppComponent: React.FC<PropsWithChildren> = ({
   );
 }
 
-type EnhanceProps = {
-  submitting: boolean,
-};
-
 const enhance = compose(
-  branch(({ submitting }: EnhanceProps) => submitting, renderComponent(Spinner)),
   withHandlers<receiveShareSuccessProps, handlerProps>({
     receiveShareSuccess: ({
       setSubmitting,
